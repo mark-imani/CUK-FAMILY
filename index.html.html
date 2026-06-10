@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CUK Family | Co-operative University of Kenya</title>
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4faf4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: #0d47a1; /* Blue outside header */
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header img {
+    height: 60px;
+  }
+
+  nav.navbar {
+    background-color: #f57c00; /* Slightly lighter orange */
+    padding: 10px 20px;
+  }
+
+  .navbar-nav .nav-link,
+  .navbar-brand {
+    color: #fff !important; /* White text */
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #e2e2e2 !important;
+  }
+
+
+ /* Alert Banner */
+  .alert {
+    background-color: #ffcc00; /* Yellow alert background */
+    color: #000;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: url('background.jpeg') no-repeat center/cover;
+    background-attachment: fixed;
+    padding: 150px 20px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Sections */
+  .section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .section h2 {
+    color: #0d47a1; /* Blue headings */
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .school-section {
+    background-color: #fff8ef;
+    border-left: 5px solid #f57c00; /* Updated orange */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+
+  .school-section h4 {
+    color: #0d47a1;
+  }
+
+ .gallery-img {
+  width: 100%;
+  height: 220px;  /* uniform height for neat look */
+  object-fit: cover; /* prevents distortion */
+  transition: transform 0.3s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+
+.moments-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Increased width */
+  gap: 15px;
+}
+
+.moments-gallery img {
+  width: 100%;
+  height: 220px; /* Keeps proportions neat */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.moments-gallery img:hover {
+  transform: scale(1.03);
+}
+
+
+
+
+  /* Testimonials */
+  .testimonial {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    border-left: 5px solid #f57c00; /* Match header orange */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    gap: 15px;
+  }
+
+  .testimonial img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .testimonial p {
+    margin: 0;
+  }
+
+/* Form */
+  form input,
+  form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+
+
+form input[type="submit"],
+form button[type="submit"] {
+  background-color: #f57c00; /* Orange button */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto; /* Centers button */
+}
+
+  /* Footer */
+  footer {
+    background-color: #0d47a1;
+    color: white;
+    padding: 30px;
+    text-align: center;
+  }
+
+  footer h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #fbc02d;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+    color: #fbc02d;
+    font-size: 20px;
+  }
+
+  /* WhatsApp Float */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    font-size: 28px;
+    text-decoration: none;
+  }
+
+/* Sticky Note */
+    .sticky-note {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      border-left: 6px solid #f57c00; /* Updated orange */
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0, 100, 0, 0.2);
+      max-width: 800px;
+      margin: 40px auto;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .sticky-note:hover {
+      box-shadow: 0 10px 30px rgba(255, 102, 0, 0.4);
+      transform: scale(1.01);
+    }
+
+    .sticky-note h4 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #0d47a1;
+    }
+
+    .sticky-note p {
+      margin: 8px 0;
+      font-size: 15px;
+      color: #0d47a1;
+      line-height: 1.6;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #f57c00; /* Updated orange */
+    }
+
+  /* Notification Bell */
+  .notif-icon {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background-color: #0d47a1;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 999;
+    cursor: pointer;
+  }
+
+  .notif-box {
+    position: fixed;
+    bottom: 170px;
+    right: 20px;
+    width: 320px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: #fff8ef;
+    color: #333;
+    border-left: 5px solid #f57c00;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+  }
+
+  .notif-box h4 {
+    margin-top: 0;
+    color: #0d47a1;
+  }
+
+  .notif-close {
+    background: #f57c00;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+</style>
+
+
+</head>
+
+<body>
+<script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.onkeydown = function(e) {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      return false;
+    }
+  };
+
+</script>
+
+<!-- ✅ Rest of the HTML remains SAME as your original -->
+
+
+<body>
+<header>
+  <!-- Blue top strip -->
+  <div class="logo-area">
+    <img src="cuk logo.png" alt="Co-operative University Logo">
+  </div>
+
+  <!-- Orange navbar section -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">CUK Family</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#schools">Opportunities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#register">Join</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <section class="hero">
+    <h1>CUK Family</h1>
+    <p>Where Innovation Meets Opportunity — Empowering the Next Generation of Co-operative University of Kenya Scholars</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About CUK Family</h2>
+    <p>We are a dynamic and visionary student-based movement and a club at Co-operative University that annually onboards 500 first-year students drawn from all schools in the university. Our core mandate is to spark disruptive innovation, bridge the gap between theory and real-world experience, and secure rare opportunities for our members across Nirobi region,the country and  East Africa’s leading organizations and industry hubs. MUST Family is more than an club — it’s a transformation hub tailored to propel ambitious scholars into distinction.<br> we do things other people dont do thats why we get results that they dont get</p>
+  </section>
+
+  <section id="opportunities" class="section">
+<h2>Tailored Opportunities for CUK Family Members</h2>
+  <p>
+    At CUK Family, we believe that every student deserves more than just a degree — they deserve an advantage. Our opportunities are designed to give you a competitive edge in the job market, access to rare networks, and exposure to real-world experience. Whether you're in **SCCD**, **SBE**, **SCM**, or pursuing a **Diploma or Certificate program**, there’s a door of opportunity waiting for you. These are well structured and braked down into   partnerships that entail top tier  organisations that we have partnered with, for quick jobs and technical absorption.atachments and internships inclussively for CUK Family members(our members dont strugle to find attachments and internships, the network of the club with outside is wide), special programs for each carreer paths that entails short courses and certifications ,regular mentorship programs to widen the scope of the EU family members . CUK FAMILY is a place that you dont want to miss to be in 
+  </p>
+
+  <!-- SCCD Opportunities -->
+  <div class="school-section">
+    <h4>SCCD – School of Cooperative and Community Development</h4>
+    <p><strong>Degree Programs:</strong> Bachelor of Co-operative Business, Disaster Risk Management, Community Development, Agribusiness, Environmental Economics, Counseling Psychology, Development Studies, etc.</p>
+    <p><strong>Opportunities Include:</strong></p>
+    <ul>
+      <li>🌍 <strong>Partner Organizations:</strong> Co-operative Bank of Kenya, SASRA, National Co-operative Housing Union, Red Cross, UNDP, FAO, World Bank-funded projects.</li>
+      <li>🏆 <strong>Special Programs:</strong> 
+        <ul>
+          <li>Co-operative Leadership & Governance Bootcamps</li>
+          <li>Agribusiness Innovation Incubators (KALRO & AFA Youth Programs)</li>
+          <li>Disaster Management Simulations with Kenya Red Cross</li>
+        </ul>
+      </li>
+      <li>📜 <strong>Certifications:</strong> Certified Co-operative Manager (CCM), Environmental Impact Assessment (EIA), Disaster Risk Management (UNISDR).</li>
+      <li>🌐 <strong>Global Exposure:</strong> International internships with NGOs, scholarships via Co-operative Alliance International.</li>
+    </ul>
+  </div>
+
+  <!-- SBE Opportunities -->
+  <div class="school-section">
+    <h4>SBE – School of Business and Economics</h4>
+    <p><strong>Degree Programs:</strong> B.Com, HR, Purchasing & Supply, Finance, Banking, Accounting, Economics, Tourism, PR, Entrepreneurship, MBA.</p>
+    <p><strong>Opportunities Include:</strong></p>
+    <ul>
+      <li>🌍 <strong>Partner Organizations:</strong> KPMG, Deloitte, PwC, Co-operative Bank, Kenya Tourism Board, East Africa Breweries, KEPSA.</li>
+      <li>🏆 <strong>Career Programs:</strong>
+        <ul>
+          <li>Business Case Competitions (Strathmore, EABL)</li>
+          <li>Entrepreneurship & Startup Bootcamps (Kenya Innovation Week, Ajira Digital)</li>
+          <li>Hospitality & Tourism Industry Attachments</li>
+        </ul>
+      </li>
+      <li>📜 <strong>Certifications:</strong> CPA, CFA, ACCA, Digital Marketing (Google, HubSpot), Certified Procurement Professional (CIPS).</li>
+      <li>🌐 <strong>Scholarships:</strong> Mastercard Foundation, Global Entrepreneurship Fellowships.</li>
+    </ul>
+  </div>
+
+  <!-- SCM Opportunities -->
+  <div class="school-section">
+    <h4>SCM – School of Computing and Mathematics</h4>
+    <p><strong>Degree Programs:</strong> Computer Science, Software Engineering, Data Science, Network Engineering, BBIT, Actuarial Science, Applied Statistics, Cyber Security.</p>
+    <p><strong>Opportunities Include:</strong></p>
+    <ul>
+      <li>🌍 <strong>Partner Organizations:</strong> Microsoft, Safaricom, Google Africa, IBM Research, Oracle Academy, Huawei ICT Academy.</li>
+      <li>🏆 <strong>Programs & Challenges:</strong>
+        <ul>
+          <li>Hackathons (JengaHub, Andela, Africa Tech Summit)</li>
+          <li>Coding Bootcamps & Incubators (Moringa School, Power Learn Project)</li>
+          <li>Data Science Competitions (Zindi Africa, Kaggle)</li>
+        </ul>
+      </li>
+      <li>📜 <strong>Certifications:</strong> Cisco Networking Academy (CCNA), AWS Cloud Practitioner, Google Data Analytics, Cyber Security Essentials, Python Programming.</li>
+      <li>🌐 <strong>Remote Internships:</strong> Microsoft Learn Student Ambassadors, Google Developer Student Club Programs.</li>
+    </ul>
+  </div>
+
+  <!-- Diploma and Certificate Programs -->
+  <div class="school-section">
+    <h4>Diploma & Certificate Programs</h4>
+    <p>
+      Diploma programs at CUK Family give you **early career advantages** through specialized training, practical exposure, and certification pathways. Whether you are studying Marketing, Accountancy, Computer Science, Hospitality, Business Management, or Supply Chain — we connect you with:
+    </p>
+    <ul>
+      <li>🏢 **Industry Attachments:** Hotels & Hospitality Chains, Co-operative Institutions, Tech Companies, NGOs, and Banks.</li>
+      <li>📜 **Short Certifications:** ICDL (International Computer Driving License), Microsoft Office Specialist, Food Safety Certifications, Customer Service Excellence.</li>
+      <li>🌐 **Online Professional Programs:** Google Digital Skills, Coursera scholarships, LinkedIn Learning access.</li>
+      <li>💼 **Job Readiness Programs:** Soft Skills Training, CV Clinics, Mock Interviews, and Career Mentorship from industry professionals.</li>
+    </ul>
+  </div>
+  <!-- Call to Action -->
+  <div class="text-center mt-5">
+    <h4 style="color:#0d47a1; font-weight:bold;">🔥 Why Join CUK Family?</h4>
+    <ul style="list-style:none; padding-left:0; font-size:1.1rem;">
+      <li>✔ 500+ Exclusive Opportunities Yearly</li>
+      <li>✔ Priority Access to Scholarships, Leadership Programs & Industry Linkages</li>
+      <li>✔ Free/Discounted Career Masterclasses & Certifications</li>
+      <li>✔ Network with Top Employers & Global Mentors</li>
+    </ul>
+    <a href="#register" class="btn btn-lg" style="background-color:#f57c00; color:white; font-weight:bold;">Join Now</a>
+  </div>
+</section>
+
+  <section id="gallery" class="section">
+  <h2 class="mb-4">Moments that Define Us</h2>
+  <div class="row g-3">
+
+    <!-- Image 1 -->
+    <div class="col-md-4 col-sm-6">
+      <a href="event3.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 1">
+        <img src="event3.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 1">
+      </a>
+    </div>
+
+    <!-- Image 2 -->
+    <div class="col-md-4 col-sm-6">
+      <a href="e1.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 2">
+        <img src="e1.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 2">
+      </a>
+    </div>
+
+    <!-- Image 3 -->
+    <div class="col-md-4 col-sm-6">
+      <a href="e2.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 3">
+        <img src="e2.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 3">
+      </a>
+    </div>
+
+    <!-- Continue for all your images -->
+    <div class="col-md-4 col-sm-6">
+      <a href="e3.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 4">
+        <img src="e3.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 4">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e4.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 5">
+        <img src="e4.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 5">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e5.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 6">
+        <img src="e5.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 6">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e6.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 7">
+        <img src="e6.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 7">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e7.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 8">
+        <img src="e7.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 8">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e8.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 9">
+        <img src="e8.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 9">
+      </a>
+    </div>
+
+    <!-- Continue for all images you listed -->
+    <div class="col-md-4 col-sm-6">
+      <a href="e9.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 10">
+        <img src="e9.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 10">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e10.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 11">
+        <img src="e10.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 11">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e11.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 12">
+        <img src="e11.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 12">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e12.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 13">
+        <img src="e12.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 13">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="t1.webp" data-lightbox="cuk-gallery" data-title="CUK Family Event 14">
+        <img src="t1.webp" class="gallery-img img-fluid rounded shadow-sm" alt="Event 14">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e13.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 15">
+        <img src="e13.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 15">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e14.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 16">
+        <img src="e14.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 16">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e15.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 17">
+        <img src="e15.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 17">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="award 3.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Award Event">
+        <img src="award 3.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Award Event">
+      </a>
+    </div>
+
+    <!-- Continue for remaining images e18.jpg to e24.jpg -->
+    <div class="col-md-4 col-sm-6">
+      <a href="e18.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 18">
+        <img src="e18.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 18">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e19.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 19">
+        <img src="e19.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 19">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e20.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 20">
+        <img src="e20.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 20">
+      </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <a href="e21.jpg" data-lightbox="cuk-gallery" data-title="CUK Family Event 21">
+        <img src="ec1.jpg" class="gallery-img img-fluid rounded shadow-sm" alt="Event 21">
+      </a>
+    </div>
+
+
+  </div>
+</section>
+
+
+<div class="sticky-note" id="quickNote">
+  <button class="btn-close" onclick="document.getElementById('quickNote').style.display='none';" aria-label="Close"></button>
+  <h4>📌 CUK Family Quick Facts</h4>
+  <p><strong>What is CUK Family?</strong> A united student community and a club.</p>
+  <p><strong>Core function?</strong></p>
+  <ul style="padding-left: 20px;">
+    <li>Linking the members to outside rare opportunities</li>
+   <li>Securing internships and attachments for the members</li>
+    <li>Mentorship forums for different career paths</li>
+    <li>Innovation and invention</li>
+  </ul>
+  <p><strong>Who should join?</strong> All CUK students — but only the first 500 first-year students are accepted.</p>
+  <p><strong>When to join?</strong> New membership is done once, when you are a first-year student.</p>
+  <p><strong>How to join?</strong> Through the registration form below.</p>
+  <p><strong>Is there a membership fee?</strong> Yes — KES 500 only.</p>
+</div>
+
+
+<section id="testimonials" class="section">
+  <h2 class="text-center mb-4" style="color:#0d47a1; font-weight:bold;">Voices from CUK Family</h2>
+  <div class="row">
+    
+    <!-- Testimonial 1 -->
+    <div class="col-md-6 mb-4">
+      <div class="testimonial p-3 shadow-sm bg-white rounded" style="border-left:5px solid #f57c00;">
+        <img src="testimonial2.jpg" alt="Student 1" style="width:60px;height:60px;border-radius:50%;margin-right:15px;float:left;">
+        <p>
+          <strong>Brian Mwangi – Bachelor of Co-operative Business</strong><br>
+          “Before joining CUK Family, I didn’t realize how vast the cooperative sector is. Through the club, I attended a Cooperative Leadership Bootcamp and got mentorship from SACCO CEOs. This exposure gave me a clear roadmap, and I even secured an internship at the Co-operative Bank where I applied classroom knowledge in real financial operations. Today, I’m working on my own SACCO startup idea, and I owe that confidence to CUK Family.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="col-md-6 mb-4">
+      <div class="testimonial p-3 shadow-sm bg-white rounded" style="border-left:5px solid #f57c00;">
+        <img src="testimonial6.jpg" alt="Student 2" style="width:60px;height:60px;border-radius:50%;margin-right:15px;float:left;">
+        <p>
+          <strong>Fatma Noor – Bachelor of Community Development</strong><br>
+          “University felt overwhelming until CUK Family stepped in with mentorship and real-life projects. Through their network, I joined a community empowerment program in Garissa where I worked on sustainable water projects. This experience opened doors for me to join NGOs like ActionAid as a volunteer. The club not only shaped my career but also gave me a purpose—impacting lives through development work.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="col-md-6 mb-4">
+      <div class="testimonial p-3 shadow-sm bg-white rounded" style="border-left:5px solid #f57c00;">
+        <img src="student3.jpg" alt="Student 3" style="width:60px;height:60px;border-radius:50%;margin-right:15px;float:left;">
+        <p>
+          <strong>Kevin Otieno – Bachelor of Commerce (Finance)</strong><br>
+          “CUK Family completely transformed my university life. I started as a shy student, unsure of where to start in finance. Through the club’s financial literacy programs and CFA mentorship series, I landed an internship at a top audit firm and gained hands-on experience in risk analysis. Today, I’m preparing for my CFA Level 1 exam, something I never thought possible before joining the family.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Testimonial 4 -->
+    <div class="col-md-6 mb-4">
+      <div class="testimonial p-3 shadow-sm bg-white rounded" style="border-left:5px solid #f57c00;">
+        <img src="m1.jpg" alt="Student 4" style="width:60px;height:60px;border-radius:50%;margin-right:15px;float:left;">
+        <p>
+          <strong>Grace Wanjiru – Bachelor of Tourism & Hospitality</strong><br>
+          “Before CUK Family, I didn’t know how competitive the hospitality sector was. The club linked me to industry professionals and offered free training on digital tourism marketing. I got a paid internship at Sarova Hotels, which opened the door for me to work at a luxury safari camp during holidays. These opportunities gave me an edge in a crowded market, and now I’m building my career with confidence.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Testimonial 5 -->
+    <div class="col-md-6 mb-4">
+      <div class="testimonial p-3 shadow-sm bg-white rounded" style="border-left:5px solid #f57c00;">
+        <img src="m19.jpg" alt="Student 5" style="width:60px;height:60px;border-radius:50%;margin-right:15px;float:left;">
+        <p>
+          <strong>Samuel Kariuki – Bachelor of Science in Software Engineering</strong><br>
+          “Joining CUK Family was the best decision I made in my first year. I was passionate about coding but lacked guidance on where to start. Through the club, I participated in hackathons, earned free certification from Cisco Networking Academy, and even worked on a real project for a local SACCO app. Today, I’m a freelance developer with clients in Nairobi and abroad, and it all started with the exposure and mentorship from this family.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Testimonial 6 -->
+    <div class="col-md-6 mb-4">
+      <div class="testimonial p-3 shadow-sm bg-white rounded" style="border-left:5px solid #f57c00;">
+        <img src="testimonoial 2.jpg" alt="Student 6" style="width:60px;height:60px;border-radius:50%;margin-right:15px;float:left;">
+        <p>
+          <strong>Lilian Achieng – Bachelor of Science in Actuarial Science</strong><br>
+          “Actuarial Science felt overwhelming until CUK Family introduced me to actuarial mentorship programs and risk modeling bootcamps. The club helped me network with professionals from insurance firms and actuarial associations. I’m now preparing for my professional exams and recently landed an internship in a top insurance company thanks to the club’s strong networks.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Testimonial 7 -->
+    <div class="col-md-6 mb-4">
+      <div class="testimonial p-3 shadow-sm bg-white rounded" style="border-left:5px solid #f57c00;">
+        <img src="m19.webp" alt="Student 7" style="width:60px;height:60px;border-radius:50%;margin-right:15px;float:left;">
+        <p>
+          <strong>Peter Njoroge – Diploma in Business Management</strong><br>
+          “I used to think diploma students had fewer opportunities until I joined CUK Family. Through their inclusive programs, I attended business incubation forums and entrepreneurship masterclasses. Today, I run a small online retail business that I started as a project during one of the club’s innovation challenges. This club proved that what matters is not the level you start at, but the network and mindset you develop.”
+        </p>
+      </div>
+    </div>
+
+    <!-- Testimonial 8 -->
+    <div class="col-md-6 mb-4">
+      <div class="testimonial p-3 shadow-sm bg-white rounded" style="border-left:5px solid #f57c00;">
+        <img src="m7.jpg" alt="Student 8" style="width:60px;height:60px;border-radius:50%;margin-right:15px;float:left;">
+        <p>
+          <strong>Aisha Mohamed – Diploma in Information Technology</strong><br>
+          “CUK Family gave me a platform to compete and learn with degree students without feeling left out. I joined coding workshops, cybersecurity trainings, and even participated in a national hackathon. This exposure helped me secure a job as a junior IT technician while still in school. CUK Family opened doors for me that I didn’t even know existed for diploma students.”
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+ <div class="alert">
+     Only the first 500 students will be accepted into CUK Family this year. Membership is highly competitive. Don’t miss out!
+  </div>
+
+  <section id="register" class="section">
+    <h2>Join CUK Family</h2>
+    <p>Membership Fee: KES 500 (Pay via Till Number <strong>88985</strong>)</p>
+<p><strong>Procedure of Payment:</strong><br>
+    • Lipa na MPESA<br>
+    • Buy Goods and Services<br>
+    • TILL NUMBER: <strong>88985</strong><br>
+     (copy your mpesa message and paste it below )
+  </p>
+     <form action="submit.php" method="POST">
+    <label>Mpesa Message:</label>
+    <input type="text" name="mpesa_message" required>
+
+    <label>First Name:</label>
+    <input type="text" name="first_name" required>
+
+    <label>Registration Number:</label>
+    <input type="text" name="reg_number" required>
+
+    <label>Bachelor's Degree Program:</label>
+    <input type="text" name="degree_program" required>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <button type="submit">Submit</button>
+    </form>
+  </section>
+<a href="https://wa.me/254712345678" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <h1>CUK Family</h1>
+    <p>&copy; 2025 CUK Family | Powered by Co-operative University Students</p>
+    <div class="social-icons">
+      <a href="mailto:cukfamily@students.cuk.ac.ke"><i class="fa fa-envelope"></i></a>
+      <a href="https://facebook.com/cukfamilyclub" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://tiktok.com/@cukfamily" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function dismissStickyNote() {
+      const note = document.getElementById("mustStickyNote");
+      if (note) {
+        note.style.display = "none";
+      }
+    }
+  </script>
+<script src="script.js"></script>
+<!-- Floating Notification Icon -->
+<div class="notif-icon" onclick="toggleNotif()">
+  <i class="fas fa-bell"></i>
+</div>
+
+<!-- Hidden Notification Box -->
+<div id="notif-box" class="notif-box">
+  <h2>📢 Important Notice for CUK Family Members</h2>
+  <p>
+    All students who secured internships or attachments through <strong>CUK Family</strong> at:
+    <strong>Co-operative Bank of Kenya, SASRA, Kenya Union of Savings & Credit Co-operatives (KUSCCO), Ministry of Co-operatives, Safaricom, Microsoft, KEMRI, NACOSTI, Red Cross, and leading SACCOs</strong>
+    are required to submit the following documents:
+  </p>
+  <ul>
+    <li>✅ Attachment/Internship Report Form</li>
+    <li>✅ Copy of KCSE Result Slip</li>
+    <li>✅ Updated CV (Curriculum Vitae)</li>
+    <li>✅ Copy of National ID</li>
+  </ul>
+  <p>
+    These documents are necessary for upcoming <strong>Job Shadowing Programs</strong>, <strong>Leadership Bootcamps</strong>, and <strong>recommendation opportunities</strong> with our partner organizations.
+  </p>
+  <p style="font-weight: 600; color: #33691e;">
+    Submit them to the <strong>CUK Family Secretary</strong> by <u>sherril Ochieng</u>.
+  </p>
+  <button onclick="toggleNotif()" class="notif-close">Close</button>
+</div>
+
+<script>
+  function toggleNotif() {
+    const box = document.getElementById('notif-box');
+    box.style.display = box.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
+  lightbox.option({
+    'resizeDuration': 300,
+    'wrapAround': true,
+    'fadeDuration': 300,
+    'imageFadeDuration': 300
+  });
+</script>
+
+</body>
+</html>
